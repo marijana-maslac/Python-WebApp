@@ -1,7 +1,8 @@
 # Python-WebApp
 
-Sveučilišni odjel za stručne studije, Informacijska Tehnologija - 3. godina, 6. semestar
-2022/2023
+Sveučilišni odjel za stručne studije, Informacijska Tehnologija - 
+Kolegij Programiranje na internetu/Izrada web aplikacije
+lipanj, 2022/2023
 
 Nositeljica predmeta: Marina Rodić, v. pred.  
 
