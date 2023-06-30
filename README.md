@@ -14,7 +14,7 @@ git clone https://github.com/marijana-vranjes/Python-WebApp.git
 
 Move into cloned directory: 
 ```bash
-cd Python-WebApp
+cd Python-WebApp-main
 ```
 
 Create a virtual environment:
