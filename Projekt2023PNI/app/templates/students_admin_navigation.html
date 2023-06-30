@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block stu_admin_nav%}
+<table style="margin-left: 5%; width:90%; border: 1px solid lightblue;">
+    <thead>
+        <th colspan="1"><h2 style="text-align:center;"> Studenti </h2></th>
+        <th>
+            <button onclick="window.location.href='http://localhost:8000/add_student/';">Dodaj novog studenta</button> 
+            <button onclick="window.location.href='http://localhost:8000/login_by_user/admin/';">Natrag</button> 
+        </th>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td style="text-align: center;font-size: 18px;">{{ student.first_name }} {{ student.last_name }}</td>
+            <td><button onclick="window.location.href='{% url 'edit_student' student.pk %}'">Uredi</button>
+            <button onclick="window.location.href='{% url 'check_stu_delete' student.id %}'">Izbriši</button>
+            <button onclick="window.location.href='http://localhost:8000/student_upisni_list/{{student.id}}'">Upisni List</button></td>
+        </tr>
+        {% endfor %}
+</tbody>
+</table>
+{% endblock %}

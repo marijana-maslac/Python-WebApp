@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block logout %}
+<table style="margin-left: 5%; width:90%; border: 1px solid lightblue;">
+    <thead>
+        <th><h1 style="text-align:center;">Odjavljen si!!</h1></th>
+    </thead>
+    <tbody>
+        <tr style="text-align:center;">
+            <td><button onclick="window.location.href='http://localhost:8000/home/';">Povratak na početnu stranicu</button></td>
+        </tr>
+    </tbody>
+</table>  
+{%endblock%}

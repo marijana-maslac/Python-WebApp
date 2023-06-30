@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block details_subject %}
+<head>
+    <style>
+        th{
+            border-right: 1px solid lightblue;
+        }
+        table{
+            width:auto;
+            border: 1px solid lightblue;
+        }
+    </style>
+</head>
+<button onclick="window.location.href='http://localhost:8000/subjects/';">Natrag</button>    
+<br><br>
+<table>
+<tr>
+    <th >Naziv predmeta:</th><td>{{ subject.name }}</td>
+</tr>
+<tr>
+    <th>Kod:</th><td>{{ subject.kod }}</td>
+</tr>
+<tr>
+    <th>Program:</th><td>{{ subject.program }}</td>
+</tr>
+<tr>
+    <th>ECTS:</th><td>{{ subject.ects }}</td>
+</tr>
+<tr>
+    <th>Semestar Izvaredan:</th><td>{{ subject.sem_izv }}</td>
+</tr>
+<tr>
+    <th>Semestar Redovan:</th><td>{{ subject.sem_red }}</td>
+</tr>
+<tr>
+    <th>Izborni:</th><td>{{ subject.izborni }}</td>
+</tr>
+<tr>
+    <th>Nositelj:</th>
+    <td>
+        {% if subject.nositelj is None %}
+        Ni jedan profesor nije dodjeljen predmetu.
+        {% else %}
+        {{ subject.nositelj }}
+        {% endif %}
+    </td>
+</tr>
+</table>
+{%endblock%}

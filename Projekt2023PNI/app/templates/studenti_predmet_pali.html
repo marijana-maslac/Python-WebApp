@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block student_predmet_pali %}
+<style>
+    td{
+        text-align: center;
+    }
+    table{
+        width: 50%;
+        border: 1px solid lightblue;
+    }
+</style>
+<button onclick="window.location.href='javascript:history.back()';">Natrag</button>    
+<br><br>
+<table>
+    <thead>
+        <th>Student</th>
+        <th>E-mail</th>
+        <th>Korisničko ime</th>
+        <th colspan="2">Status predmeta</th>
+    </thead>
+    <tbody>
+        {% for upisani in data %}
+            {% if upisani.status == 'izgubio potpis' %}
+            <tr>
+                <td>{{ upisani.student.first_name }} {{ upisani.student.last_name }}</td>
+                <td>{{ upisani.student.email }}</td>
+                <td>{{ upisani.student.username }}</td>
+                <td>{{ upisani.status }}</td>
+            {% else %}
+            {% endif %}    
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}    

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block prof_admin_nav%}
+<table style="margin-left: 5%; width:90%; border: 1px solid lightblue;">
+    <thead>
+        <th><h2 style="text-align:center;"> Profesori </h2></th>
+        <th colspan="2">
+            <button onclick="window.location.href='http://localhost:8000/add_profesor/';">Dodaj novog profesora</button> 
+            <button onclick="window.location.href='http://localhost:8000/login_by_user/admin/';">Natrag</button> 
+        </th>
+    </thead>
+    <tbody>
+        {% for profesor in profesors %}
+        <tr>
+            <td style="text-align: center;font-size: 18px;">{{ profesor.first_name }} {{ profesor.last_name }}
+            </td><td>
+            <button onclick="window.location.href='{% url 'edit_profesor' profesor.pk %}'">Uredi</button>
+            <button onclick="window.location.href='{% url 'check_prof_delete' profesor.id %}';">Izbriši</button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

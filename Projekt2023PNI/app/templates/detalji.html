@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block zad2 %}
+<head>
+    <style>
+        table{
+            width: auto;
+            border: 1px solid lightblue;
+        }
+        tr, td{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<button onclick="window.location.href='http://localhost:8000/zadatak1/';">Natrag</button> 
+<h2>Student: {{ student.first_name }} {{ student.last_name }}</h2>
+<table>
+    <thead>
+        <th>Popis položenih predmeta:</th>
+    </thead>
+    <tbody>
+        {% for kolegij in polozeni %}
+        <tr><td>{{ kolegij }}</td>
+        {% empty %}
+            <td>Nema položenih predmeta.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<table>
+    <thead>
+        <th>Popis upisanih (nepoloženih) predmeta:</th>
+    </thead>
+    <tbody>
+        {% for kolegij in upisani %}
+        <tr><td>{{ kolegij }}</td>
+        {% empty %}
+        <td>Nema upisanih predmeta.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}  

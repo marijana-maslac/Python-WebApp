@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block subjects %}
+<table style="margin-left: 5%; width:90%; border: 1px solid lightblue;">
+    <thead>
+        <th colspan="4"><h1 style="text-align:center;">Dobrodošli na Projekt2023PNI</h1></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><p>Projektni zadatak za kolegij Programiranje na internetu: Izraditi sustav za upis studenata. Sustav se sastoji od tri uloge: student, profesor i administrator.</p>
+                <p> Lipanj, 2023.</p>
+            </td>
+        </tr>
+        <tr>        
+            <td style="text-align:center;">
+                <button onclick="window.location.href='http://localhost:8000/register/';">Registriraj se</button>    
+                <button onclick="window.location.href='http://localhost:8000/login/';">Prijavi se</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

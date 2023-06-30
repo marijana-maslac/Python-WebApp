@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block stu_admin_subs %}
+<style>
+    table{
+        width:50%;
+    }
+    tr{
+        text-align: center;
+    }
+    th,td{
+        border: 1px solid lightblue;
+    }
+</style>
+<button onclick="window.location.href='http://localhost:8000/subjects/';">Natrag</button><br><br> 
+<table>
+    <thead>
+        <th>Student</th>
+        <th>E-mail</th>
+        <th>Korisničko ime</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        {% for upisani in data %}
+        <tr>
+            <td>{{upisani.student.first_name}} {{upisani.student.last_name}}</td>
+            <td>{{upisani.student.email}}</td>
+            <td>{{upisani.student.username}}</td>
+            <td>{{upisani.student.status}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{%endblock%}

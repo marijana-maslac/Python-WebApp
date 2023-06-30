@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block stu_prof_subs %}
+<button onclick="window.location.href='http://localhost:8000/subjects/';">Natrag</button>
+<button onclick="window.location.href='{% url 'studenti_predmet_upisani' subject.id %}';">Upisani studenti</button>
+<button onclick="window.location.href='{% url 'studenti_predmet_polozili' subject.id %}';">Studenti položili</button>
+<button onclick="window.location.href='{% url 'studenti_predmet_pali' subject.id %}';">Studenti izgubili potpis</button>
+<br><br><table style="width:60%; border: 1px solid lightblue;">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>E-mail</th>
+            <th>Korisničko ime</th>
+            <th>Status predmeta</th>
+            <th colspan="2" style="text-align: center;">Promjeni status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for upisani in data %}
+        <tr>
+            <td>{{ upisani.student.first_name }} {{ upisani.student.last_name }}</td>
+            <td>{{ upisani.student.email }}</td>
+            <td>{{ upisani.student.username }}</td>
+            <td>{{ upisani.status }}</td>
+            <form method="POST" action="{% url 'change_student_status_prof' upisani.id %}">
+                <td>
+                    {% csrf_token %}
+                    <input type="hidden" name="student_id" value="{{ upisani.id }}">
+                    <select name="status" {% if upisani.status == 'polozen' or upisani.status == 'izgubio potpis' %}disabled{% endif %}>
+                        <option {% if upisani.status == 'upisan' %}selected{% endif %} value="upis">Upis</option>
+                        <option {% if upisani.status == 'izgubio potpis' %}selected{% endif %} value="izgubio potpis">Izgubio potpis</option>
+                        <option {% if upisani.status == 'polozen' %}selected{% endif %} value="polozen">Položen</option>
+                    </select></td>
+                <td><input type="submit" value="Submit"{% if upisani.status == 'polozen' or upisani.status == 'izgubio potpis' %}disabled{% endif %}></td>
+            </form>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

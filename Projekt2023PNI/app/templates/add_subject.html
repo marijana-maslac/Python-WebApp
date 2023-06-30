@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block add_subject %}    
+<button onclick="window.location.href='http://localhost:8000/subjects/';">Natrag</button>    
+<h2>Unesi podatke za novi predmet</h2>
+<form method="POST" style="width:30%;">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table><br>
+    <input type="submit" value="Dodaj">
+</form>
+{% endblock %}

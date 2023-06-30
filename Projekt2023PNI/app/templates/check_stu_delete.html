@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block confirm_delete %}
+<head>
+<style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;  
+    }
+    
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    margin: 20px;
+    color: black;
+  }
+
+  form p {
+    margin-bottom: 10px;
+  }
+
+  form input[type="submit"] {
+    margin-right: 10px;
+  }
+</style>
+</head>
+<form action="{% url 'delete_student' data %}" method="POST">
+    <p>Sigurno želiš izbrisati studenta?</p>
+    <div>
+    <input type="submit" name="Da" value="Da">
+    <input type="submit" name="Ne" value="Ne">
+    </div>
+    {% csrf_token %}
+</form>
+{%endblock%}

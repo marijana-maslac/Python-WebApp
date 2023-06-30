@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block add_profesor %}   
+<button onclick="window.location.href='http://localhost:8000/profesors_admin_navigation/';">Natrag</button>    
+<h2>Unesi podatke novog profesora</h2>
+<form method="POST" style="width:30%;">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table><br>
+    <input type="submit" value="Dodaj">
+</form>
+{% endblock %}

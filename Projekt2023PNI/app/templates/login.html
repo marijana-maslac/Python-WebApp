@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block login %}
+<button onclick="window.location.href='http://localhost:8000/home/';">Povratak na početnu stranicu</button>    
+<form method="POST" style="width:30%;">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th><label for="{{ form.username.id_for_label }}">Korisničko ime:</label></th>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <th><label for=,"{{ form.password.id_for_label }}">Lozinka:</label></th>
+            <td>{{ form.password }}</td>
+        </tr>
+    </table>
+    <br><br>
+    <input type="submit" value="Prijava">
+</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<button onclick="window.location.href='http://localhost:8000/students_admin_navigation/';">Natrag</button><br><br>
+<h2>Upisni List - {{ student.first_name }} {{ student.last_name }}</h2>
+{% if predmeti %}
+<table style="width:auto;">
+    <thead>
+      <tr>
+        <th>Predmet</th>
+        <th>Status</th>
+        <th>Upis/Ispis</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for predmet in predmeti %}
+        <tr>
+          <td>{{ predmet.name }}</td>
+          <td>
+            {% if predmet.id in upisani_predmeti %}
+              Upisan
+            {% else %}
+              Nije upisan
+            {% endif %}
+          </td>
+          <td>
+            {% if predmet.id in upisani_predmeti %}
+            <form style="border-color: white;" action="{% url 'upis_ili_ispis_admin' student.id predmet.id %}" method="POST">
+              {% csrf_token %}  
+              <button type="submit">Ispiši</button>
+              </form>
+            {% else %}
+              <form style="border-color: white;" action="{% url 'upis_ili_ispis_admin' student.id predmet.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Upiši</button>
+              </form>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+<p>Nema dostupnih predmeta.</p>
+{% endif %}
+{% endblock %}

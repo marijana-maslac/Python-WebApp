@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt2023PNI</title>
+    <style>
+      :root {
+        --primary-color: #B6E3F1; /* Pastelna plava */
+        --secondary-color: #C5F3C6; /* Pastelna zelena */
+        --accent-color: #E5D3E8; /* Pastelna ljubičasta */
+        --highlight-color: #FAD9E9; /* Pastelna roza */
+        --highlight2-color: #FDF3B5; /* Pastelna žuta */
+        --highlight3-color: #FFD6B0; /* Pastelna narančasta */
+      }
+      h1{
+        color: black;
+      }
+      button,
+      input[type="submit"] {
+        background-color: white;
+        color: black;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid var(--primary-color);
+        border-radius: 4px;
+      }
+      
+      button:hover,
+      input[type="submit"]:hover {
+        background-color: var(--primary-color);
+        color: black;
+      }
+      
+      a:link,
+      a:visited {
+        color: black;
+        text-decoration: none;
+      }
+      
+      a:hover,
+      a:active {
+        color: black;
+      }
+      
+      table {
+        border-collapse: collapse;
+      }
+      
+      th,
+      td {
+        padding: 8px;
+        border-bottom: 1px solid var(--primary-color);
+        color: black;
+      }
+      
+      thead {
+        background-color: var(--primary-color);
+        color: black;
+      }
+
+      form {
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        padding: 20px;
+        width: auto;
+        margin: 20px;
+        color:black;
+      }
+      
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: var(--secondary-color);
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid var(--primary-color);
+        border-radius: 4px;
+        color: black;
+      }      
+      select option {
+        background-color: var(--primary-color);
+        color: black;
+      }
+    </style>
+</head>
+<body>  
+    {% block home %}
+    {% endblock %}
+    {% block register %}
+    {% endblock %}
+    {% block login %}
+    {% endblock %}
+    {% block nav %}
+    {% endblock %}
+    {% block subjects %}
+    {% endblock %}
+    {% block logout %}
+    {% endblock %}    
+    {% block add_subject %}
+    {% endblock %}
+    {% block details_subject %}
+    {% endblock %}
+    {% block edit_subject %}
+    {% endblock %}
+    {% block prof_admin_nav %}
+    {% endblock %}
+    {% block add_profesor %}    
+    {% endblock %}
+    {% block edit_profesor %}    
+    {% endblock %}
+    {% block delete_profesor %}
+    {% endblock %}
+    {% block stu_admin_nav %}
+    {% endblock %}
+    {% block add_student %}
+    {% endblock %}
+    {% block edit_student %}
+    {% endblock %}
+    {% block confirm_delete %}
+    {% endblock %}
+    {% block stu_admin_subs %}
+    {% endblock %}
+    {% block stu_prof_subs %}
+    {% endblock %}    
+    {% block content %}
+    {% endblock %}
+    {% block student_predmet_status %}
+    {% endblock %}  
+    {% block student_predmet_prosli %}
+    {% endblock %}  
+    {% block student_predmet_pali %}
+    {% endblock %}  
+    {% block zad1 %}
+    {% endblock %}  
+    {% block zad2 %}
+    {% endblock %}  
+</body>
+</html>

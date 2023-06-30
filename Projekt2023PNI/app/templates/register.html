@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block register %}
+<button onclick="window.location.href='http://localhost:8000/home/';">Povratak na početnu stranicu</button>    
+<h2>Registracija</h2>
+<form method="POST" style="width:30%; border:1px solid lightblue;">
+<table>
+        {{form.as_table}}
+</table>        
+<br>
+<input type="submit" value="Napravi profil">
+{% csrf_token %}
+</form>
+{% endblock %}

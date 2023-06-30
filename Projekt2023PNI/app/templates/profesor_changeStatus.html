@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block prof_change %}
+<button onclick="window.location.href='http://localhost:8000/student_profesor_subjects/';">Back</button>    
+<form action="{% url 'profesor_changeStatus' data %}" method="POST">
+    <p>Are you sure?</p>
+    <input type="submit" name="Da" value="Da">
+    <input type="submit" name="Ne" value="Ne">
+    {% csrf_token %}
+</form>
+{% endfor %}
+</table>
+{%endblock%}

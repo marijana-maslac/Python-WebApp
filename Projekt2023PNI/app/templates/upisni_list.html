@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  th{
+    font-size: 20px;
+  }
+  td{
+    text-align: center;
+  }
+  table{
+    width: 50%;
+    border: 1px solid lightblue;
+  }
+</style>
+<button onclick="window.location.href='http://localhost:8000/login_by_user/student/';">Natrag</button> 
+<h2>Upisni List </h2>
+<table>
+  {% if predmeti %}
+    <thead>
+      <tr>
+        <th>Predmet</th>
+        <th>Status</th>
+        <th>Upis / Ispis</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for predmet in predmeti %}
+        <tr>
+          <td style="text-align: left; font-size: 17px;">{{ predmet.name }}</td>
+          <td>
+            {% if predmet.id in upisani_predmeti %}
+              Upisan
+            {% else %}
+              Nije upisan
+            {% endif %}
+          </td>
+          <td>
+            {% if predmet.id in upisani_predmeti %}
+            <form style="border-color: white;" action="{% url 'upis_ili_ispis' predmet.id %}" method="POST">
+              {% csrf_token %}  
+              <button type="submit">Ispiši</button>
+              </form>
+            {% else %}
+              <form style="border-color: white;" action="{% url 'upis_ili_ispis' predmet.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Upiši</button>
+              </form>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+{% else %}
+<p>Nema dostupnih predmeta.</p>
+{% endif %}
+</table>
+{% endblock %}

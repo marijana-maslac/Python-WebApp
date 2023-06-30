@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block subjects %}
+<style>
+    table{
+        margin-left: 5%;
+        width:90%;
+        border: 1px solid lightblue;
+    }
+    th,td{
+        text-align: center;
+    }
+</style>
+<table>
+    <thead>
+    <tr>
+        <th>Predmeti: </th>
+        <th>Kod: </th>
+        <th>ECTS: </th>
+        <th>Detalji: </th>
+        <th>
+            {% if user.uloga == 'ADMIN' %}
+                <button onclick="window.location.href='http://localhost:8000/add_subject/';">Dodaj novi predmet</button>    
+                <button onclick="window.location.href='http://localhost:8000/login_by_user/admin/';">Natrag</button><br><br> 
+            {% else %}
+            <button onclick="window.location.href='http://localhost:8000/login_by_user/profesor/';">Natrag</button><br><br> 
+            {% endif %}    
+        </th>
+    </tr>
+    </thead>    
+    <tbody>
+        {% for subject in data %}
+        <tr>
+            <td style="text-align: left;">{{subject.name}}</td>
+            <td>{{subject.kod}}</td>
+            <td>{{subject.ects}}</td>
+            <td>
+            {% if user.uloga == 'ADMIN' %}
+                    <button onclick="window.location.href='{% url 'details_subject' subject.pk %}'">Detalji</button>
+                    <button onclick="window.location.href='{% url 'edit_subject' subject.pk %}'">Uredi</button>    
+                    <button onclick="window.location.href='http://localhost:8000/delete_subject/{{subject.id}}';">Izbriši</button>    
+                    <button onclick="window.location.href='http://localhost:8000/student_admin_subjects/{{subject.id}}';">Popis svih studenata</button>
+            {% else %}
+                    <button onclick="window.location.href='{% url 'details_subject' subject.pk %}'">Detalji</button>
+                    <button onclick="window.location.href='{% url 'student_profesor_subjects' subject.id %}';">Popis svih studenata</button>
+            {% endif %}
+            </td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
