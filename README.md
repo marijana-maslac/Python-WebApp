@@ -29,7 +29,7 @@ venv\Scripts\activate
 
 Move into directory with project files:
 ```bash
-cd project
+cd Projekt2023PNI
 ```
 
 Install the requirements:
