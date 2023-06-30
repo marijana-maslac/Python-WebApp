@@ -70,7 +70,7 @@ Sustav ce se sastojati od tri uloge: **student**, **profesor** i **administrator
     - autentikacija
     - pregled liste predmeta prijavljenog profesora
     - pregled popisa studenata na pojedinom kolegiju (kojem je prijavljeni profesor nositelj)
-    - mijenjanje statusa predmeta (po defaultu je samo upisan, a moze se promijeniti u „polozen” ili „izgubio potpis”. Predmet se moze ispisati sve dok mu status nije promijenjen u polozen/izgubio potpis)
+    - mijenjanje statusa predmeta (po defaultu je samo upisan, a moze se promijeniti u „polozen” ili „izgubio potpis”)
     - pregled studenata na svakom pojedinom predmetu prema sljedecim kriterijima:
         1. studenti koji su izgubili potpis
         2. studenti koji su dobili potpis, ali jos nisu polozili predmet
