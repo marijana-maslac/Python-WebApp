@@ -9,7 +9,7 @@ Nositeljica predmeta: Marina Rodić, v. pred.
 
 Clone the repository:
 ```bash
-git clone [https://github.com/marijana-vranjes/Python-WebApp.git](https://github.com/marijana-vranjes/Python-WebApp.git)
+git clone (https://github.com/marijana-vranjes/Python-WebApp.git)
 ```
 
 Move into cloned directory: 
