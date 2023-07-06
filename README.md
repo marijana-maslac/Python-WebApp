@@ -4,8 +4,6 @@ Sveučilišni odjel za stručne studije, Informacijska Tehnologija -
 Kolegij Programiranje na internetu/Izrada web aplikacije
 lipanj, 2022/2023
 
-Nositeljica predmeta: Marina Rodić, v. pred.  
-
 ## Running locally  
 
 Clone the repository:
